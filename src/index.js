@@ -1,9 +1,15 @@
-export default (date, uppercase = false) => {
-  if (typeof date !== 'string') {
+/**
+ *
+ * @param {string} time
+ * @param {boolean} uppercase
+ * @return {string}
+ */
+export default (time, uppercase = false) => {
+  if (typeof time !== 'string') {
     throw 'Error: Argument must be a string.';
   }
 
-  let [hh, mm] = date.split(':');
+  let [hh, mm] = time.split(':');
   hh = parseInt(hh, 10);
   mm = parseInt(mm, 10);
 

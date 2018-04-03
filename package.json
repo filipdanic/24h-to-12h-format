@@ -1,5 +1,5 @@
 {
-  "name": "24h-to-12h-format",
+  "name": "24hto12hformat",
   "version": "0.0.1",
   "description": "Converts from 24-hour hh:mm to 12-hour hh:mm +merdian",
   "homepage": "https://github.com/filipdanic/24h-to-12h-format",

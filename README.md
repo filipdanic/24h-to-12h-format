@@ -1,68 +1,37 @@
-# with-prefix
+# 24hto12hformat
 
-Ensures that a string starts with the given prefix, if it does not already. Also comes with a couple of extra utilities for common use cases.
+Converts from 24-hour `hh:mm` to 12-hour `hh:mm +merdian` format.
+
+_Fun fact: the original name of this package (`24h-to-12h-format`) could not be published to NPM due to their system considering it a spam name. :)_
 
 ## Usage
 
-Install with `yarn add with-prefix`.
+Install with `yarn add 24h-to-12h-format`.
 
 In your code:
 
 ```javascript
-import withPrefix from 'with-prefix';
+import timeFormatter from '24hto12hformat';
 
-withPrefix('hello-world.com', 'www.'); // => www.hello-world.com
-withPrefix('www.hello-world.com', 'www.'); // => www.hello-world.com
+timeFormatter('13:30'); // => 1:30 pm
+// same as timeFormatter('13:30', false);
+// but
+timeFormatter('13:30', true); // => 1:30 PM
 
+// works fine
+timeFormatter('15:33:29 GMT+020'); // => 3:33 pm
 ```
 
-You can also use the `startsWith` function which checks if the prefix exists. 
+## Contract
 
 ```javascript
-import { startsWith } from 'with-prefix';
-
-startsWith('hello-world.com', 'www.'); // => false
-startsWith('www.hello-world.com', 'www.'); // => true
-
+/**
+ *
+ * @param {string} time
+ * @param {boolean} uppercase
+ * @return {string}
+ */
 ```
 
-## Utilities
+If the the supplied `time` argument is not a `string`, or it does not start in the `hh:mm` format, then the module will throw an exception in the form of a string.
 
-The library also comes with the functions `withHTTP` and `withTell`. If you have an idea for some other common utilities with this pattern, send a Pull Request, or fork this repo and publish your own package.
-
-### withHTTP
-
-If the provided string stats with `http://` or `https://` then it is left as is. If not, then one of the two defaults based on the second argument.
-
-```javascript
-import { withHTTP } from 'with-prefix';
-
-// signature: withHTPP = (target: String, useTLS: Boolean): String
-
-// prefix based on the 2nd argument
-withHTTP('hello-world.com', false); // => http://hello-world.com
-withHTTP('hello-world.com', true); // => https://hello-world.com
-
-// valid input is left alone
-withHTTP('http://hello-world.com', false); // => http://hello-world.com
-withHTTP('http://hello-world.com', true); // => http://hello-world.com
-
-// valid input is left alone
-withHTTP('https://hello-world.com', false); // => https://hello-world.com
-withHTTP('https://hello-world.com', true); // => https://hello-world.com
-```
-
-### withTell
-
-```javascript
-import { withTell } from 'with-prefix';
-
-// signature: withTell = (target: String): String
-
-
-// prefix when no tell://
-withTell('344-31-221'); // => tell://344-31-221
-
-// valid input is left alone
-withTell('tell://344-31-221'); // => tell://344-31-221
-```

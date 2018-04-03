@@ -12,4 +12,8 @@ console.assert(func('11:15:00', true) === '11:15 AM');
 console.assert(func('13:15:00', true) === '1:15 PM');
 console.assert(func('17:15:00', true) === '5:15 PM');
 console.assert(func('23:59:00', true) === '11:59 PM');
+
+console.assert(func('23:59:00:0000 +020 GMT', true) === '11:59 PM');
+console.assert(func('23:59:00+020GMT', true) === '11:59 PM');
+
 console.log('✅ All tests passing.');
