@@ -1,0 +1,34 @@
+{
+  "name": "24h-to-12h-format",
+  "version": "0.0.1",
+  "description": "Converts from 24-hour hh:mm to 12-hour hh:mm +merdian",
+  "homepage": "https://github.com/filipdanic/24h-to-12h-format",
+  "bugs": {
+    "url": "https://github.com/filipdanic/24h-to-12h-format/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:filipdanic/24h-to-12h-format.git"
+  },
+  "keywords": [
+    "time",
+    "24 hour",
+    "12 hour",
+    "time formatter"
+  ],
+  "author": {
+    "name": "Filip Danić",
+    "email": "filipdanic7@gmail.com",
+    "url": "http://danicfilip.com"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "node src/test.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
