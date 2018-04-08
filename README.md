@@ -6,7 +6,7 @@ _Fun fact: the original name of this package (`24h-to-12h-format`) could not be 
 
 ## Usage
 
-Install with `yarn add 24h-to-12h-format`.
+Install with `yarn add 24hto12hformat`.
 
 In your code:
 
