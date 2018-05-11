@@ -1,6 +1,6 @@
 {
   "name": "24hto12hformat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Converts from 24-hour hh:mm to 12-hour hh:mm +merdian",
   "homepage": "https://github.com/filipdanic/24h-to-12h-format",
   "bugs": {
