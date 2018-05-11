@@ -21,7 +21,7 @@ export default (time, uppercase = false, includeMilliseconds = false) => {
   ms = parseInt(ms, 10);
 
   if (isNaN(ms)) {
-    ms = '00';
+    ms = 0;
   }
 
   if (!Number.isNaN(hh) && !Number.isNaN(mm)) {
@@ -33,7 +33,7 @@ export default (time, uppercase = false, includeMilliseconds = false) => {
     hh = hh % 12;
     hh = hh ? hh : 12; // the hour '0' should be '12'
     mm = mm < 10 ? `0${mm}` : mm;
-    return `${hh}:${mm}${includeMilliseconds ? `:${ms}` : ''} ${suffix}`;
+    return `${hh}:${mm}${includeMilliseconds ? `:${ms < 10 ? `0${ms}` : ms}` : ''} ${suffix}`;
   } else {
     throw 'Error: Argument must be a string in the format of hh:mm or hh:mm:ss or hh:mm:ss:ms etc.';
   }
