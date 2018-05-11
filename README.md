@@ -21,7 +21,7 @@ timeFormatter('13:30', true); // => 1:30 PM
 // works fine
 timeFormatter('15:33:29 GMT+020'); // => 3:33 pm
 
-// to add milliseconds:
+// to add seconds:
 timeFormatter('13:30', true, true); // => 1:30:00 PM
 timeFormatter('13:30:13', true, true); // => 1:13:00 PM
 
@@ -34,7 +34,7 @@ timeFormatter('13:30:13', true, true); // => 1:13:00 PM
  *
  * @param {string} time
  * @param {boolean} uppercase
- * @param {boolean} includeMilliseconds
+ * @param {boolean} includeSeconds
  * @return {string}
  */
 ```
