@@ -1,12 +1,16 @@
 # 24hto12hformat
 
-Converts from 24-hour `hh:mm` to 12-hour `hh:mm +merdian` format.
+Converts from 24-hour `hh:mm` to 12-hour `hh:mm +merdian` or `hh:mm:ss +merdian` format.
 
-_Fun fact: the original name of this package (`24h-to-12h-format`) could not be published to NPM due to their system considering it a spam name. :)_
 
 ## Usage
 
-Install with `yarn add 24hto12hformat`.
+Install:
+```
+yarn add 24hto12hformat
+# or
+npm install 24hto12hformat --save
+```
 
 In your code:
 
@@ -23,10 +27,9 @@ timeFormatter('15:33:29 GMT+020'); // => 3:33 pm
 
 // to add seconds:
 timeFormatter('13:30', true, true); // => 1:30:00 PM
-timeFormatter('13:30:13', true, true); // => 1:13:00 PM
+timeFormatter('13:30:13', true, true); // => 1:30:13 PM
 
 ```
-
 ## Contract
 
 ```javascript
@@ -41,3 +44,6 @@ timeFormatter('13:30:13', true, true); // => 1:13:00 PM
 
 If the the supplied `time` argument is not a `string`, or it does not start in the `hh:mm` format, then the module will throw an exception in the form of a string.
 
+## Other Notes
+
+_Fun fact: the original name of this package (`24h-to-12h-format`) could not be published to NPM due to their system considering it a spam name. :)_
